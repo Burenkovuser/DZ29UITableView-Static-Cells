@@ -95,4 +95,11 @@
 }
 */
 
+- (IBAction)textFieldAction:(UITextField *)sender {
+}
+- (IBAction)actionTextFieldChanged:(UITextField *)sender {
+}
+
+- (IBAction)subscriptionActions:(id)sender {
+}
 @end

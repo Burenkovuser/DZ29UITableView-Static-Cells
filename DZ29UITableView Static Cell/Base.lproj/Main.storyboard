@@ -24,7 +24,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e6l-zo-vxk" id="Eez-yV-gzJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BeD-mO-QPh">
@@ -40,6 +40,11 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next"/>
+                                                    <connections>
+                                                        <action selector="actionTextFieldChanged:" destination="845-kC-9zc" eventType="editingDidEnd" id="QXx-8c-weG"/>
+                                                        <action selector="actionTextFieldChanged:" destination="845-kC-9zc" eventType="editingChanged" id="Quf-yV-aDh"/>
+                                                        <action selector="textFieldAction:" destination="845-kC-9zc" eventType="editingChanged" id="ldh-FJ-5tX"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -64,6 +69,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next"/>
+                                                    <connections>
+                                                        <action selector="actionTextFieldChanged:" destination="845-kC-9zc" eventType="editingDidEnd" id="bDw-6w-Pga"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -88,6 +96,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
+                                                    <connections>
+                                                        <action selector="actionTextFieldChanged:" destination="845-kC-9zc" eventType="editingDidEnd" id="7ak-wI-t54"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -112,6 +123,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next" secureTextEntry="YES"/>
+                                                    <connections>
+                                                        <action selector="actionTextFieldChanged:" destination="845-kC-9zc" eventType="editingDidEnd" id="hnx-bh-VkC"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -136,6 +150,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                                    <connections>
+                                                        <action selector="actionTextFieldChanged:" destination="845-kC-9zc" eventType="editingDidEnd" id="nMv-AX-y2n"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -160,6 +177,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                                    <connections>
+                                                        <action selector="actionTextFieldChanged:" destination="845-kC-9zc" eventType="editingDidEnd" id="7eP-3G-b3Z"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -184,6 +204,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="done"/>
+                                                    <connections>
+                                                        <action selector="actionTextFieldChanged:" destination="845-kC-9zc" eventType="editingDidEnd" id="yd7-tC-xIS"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -209,6 +232,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="Q8x-sY-fOf">
                                                     <rect key="frame" x="299" y="7" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="subscriptionActions:" destination="845-kC-9zc" eventType="valueChanged" id="C3x-lw-vV6"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -234,6 +260,9 @@
                                                         <segment title="on mobile"/>
                                                         <segment title="on e-mail"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="subscriptionActions:" destination="845-kC-9zc" eventType="valueChanged" id="OfL-pH-in5"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -255,6 +284,9 @@
                                                 <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" id="61S-K0-zMm">
                                                     <rect key="frame" x="156" y="36" width="213" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="subscriptionActions:" destination="845-kC-9zc" eventType="valueChanged" id="9jJ-J0-Z6I"/>
+                                                    </connections>
                                                 </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gtz-wa-Zpt">
                                                     <rect key="frame" x="202" y="7" width="120" height="28"/>
@@ -274,6 +306,25 @@
                             <outlet property="delegate" destination="845-kC-9zc" id="YUg-RT-PHM"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="newsPerDaySlider" destination="gtz-wa-Zpt" id="C6T-xb-Kbi"/>
+                        <outlet property="receivingNewsControl" destination="Q8x-sY-fOf" id="itb-FS-wJe"/>
+                        <outlet property="subscribeSwitch" destination="bcm-XJ-dte" id="kWs-d4-qQk"/>
+                        <outletCollection property="mainTextField" destination="FN9-C0-LY0" id="pqh-0C-GTk"/>
+                        <outletCollection property="mainTextField" destination="EKh-be-Xvl" id="hsV-lJ-oFh"/>
+                        <outletCollection property="mainTextField" destination="esR-cK-Rgi" id="lEq-7l-4C0"/>
+                        <outletCollection property="mainTextField" destination="eeZ-zk-swx" id="pnI-qy-i09"/>
+                        <outletCollection property="mainTextField" destination="bOm-Gd-GQn" id="h9q-JQ-d5u"/>
+                        <outletCollection property="mainTextField" destination="JwQ-QO-Xkq" id="6h6-ZE-WuJ"/>
+                        <outletCollection property="mainTextField" destination="7o0-WY-ndf" id="7tK-Xv-aC3"/>
+                        <outletCollection property="mainLabels" destination="BeD-mO-QPh" id="rTB-Ga-JVc"/>
+                        <outletCollection property="mainLabels" destination="nDM-U7-tME" id="eoh-n2-Shc"/>
+                        <outletCollection property="mainLabels" destination="ssv-G8-cKg" id="tEi-lT-lv0"/>
+                        <outletCollection property="mainLabels" destination="2r7-Z9-3Kb" id="TZQ-3Q-EUc"/>
+                        <outletCollection property="mainLabels" destination="3is-CD-AsA" id="c8P-EI-gbZ"/>
+                        <outletCollection property="mainLabels" destination="ysI-K3-k7m" id="ye5-eE-hmN"/>
+                        <outletCollection property="mainLabels" destination="Y48-YJ-1Pa" id="x9a-1j-wUs"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AZ9-t1-hyJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
