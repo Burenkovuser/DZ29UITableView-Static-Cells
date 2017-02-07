@@ -307,7 +307,8 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="newsPerDaySlider" destination="gtz-wa-Zpt" id="C6T-xb-Kbi"/>
+                        <outlet property="newsCounLabel" destination="gtz-wa-Zpt" id="lb3-dr-9cE"/>
+                        <outlet property="newsPerDaySlider" destination="gtz-wa-Zpt" id="Ksa-QS-saE"/>
                         <outlet property="receivingNewsControl" destination="Q8x-sY-fOf" id="itb-FS-wJe"/>
                         <outlet property="subscribeSwitch" destination="bcm-XJ-dte" id="kWs-d4-qQk"/>
                         <outletCollection property="mainTextField" destination="FN9-C0-LY0" id="pqh-0C-GTk"/>

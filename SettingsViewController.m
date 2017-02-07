@@ -12,89 +12,61 @@
 
 @end
 
+// Ключи, под которыми будем хранить соответствующие значения полей (k от слова ключ)
+static NSString* kSettingsName          = @"Name";
+static NSString* kSettingsLastname      = @"Lastname";
+static NSString* kSettingsLogin         = @"Login";
+static NSString* kSettingsPassword      = @"Password";
+static NSString* kSettingsAge           = @"Age";
+static NSString* kSettingsPhoneNumber   = @"PhoneNumber";
+static NSString* kSettingsEmail         = @"Email";
+static NSString* kSettingsSubscribe     = @"Subscribe";
+static NSString* kSettingsReceivingNews = @"ReceivingNews";
+static NSString* kSettingsNewsAmount    = @"NewsAmount";
+
 @implementation SettingsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+   
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+}
+
+#pragma mark - Save and load
+
+-(void) saveSettings {
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];//это синглтон поэтому инициализируюется через standardUserDefaults
     
-    return cell;
+    // Кладем значения, которые хотим сохранить после перезапуска, под соответствующими ключами
+    [userDefaults setObject:[[self.mainTextField objectAtIndex:0] text] forKey:kSettingsName];//берем проперти поле по индексу, тексту, ключу
+    [userDefaults setObject:[[self.mainTextField objectAtIndex:1] text] forKey:kSettingsLastname];
+    
+    [userDefaults setObject:[[self.mainTextField objectAtIndex:2] text] forKey:kSettingsLogin];
+    
+    [userDefaults setObject:[[self.mainTextField objectAtIndex:3] text] forKey:kSettingsPassword];
+    
+    [userDefaults setObject:[[self.mainTextField objectAtIndex:4] text] forKey:kSettingsAge];
+    
+    [userDefaults setObject:[[self.mainTextField objectAtIndex:5] text] forKey:kSettingsPhoneNumber];
+    
+    [userDefaults setObject:[[self.mainTextField objectAtIndex:6] text] forKey:kSettingsEmail];
+    
+    [userDefaults setBool:self.subscribeSwitch.isOn forKey:kSettingsSubscribe];//для переключателя контрола BOOL
+    
+    [userDefaults setInteger:self.receivingNewsControl.selectedSegmentIndex forKey:kSettingsReceivingNews]; //для сегмента инт
+    
+    [userDefaults setDouble:self.newsPerDaySlider.value forKey:kSettingsNewsAmount];//для сайдера дабл
+    
+      [userDefaults synchronize]; // значения будут сохраняться даже после вылета приложения
+   
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
+#pragma mark - Actions
 - (IBAction)textFieldAction:(UITextField *)sender {
 }
 - (IBAction)actionTextFieldChanged:(UITextField *)sender {
